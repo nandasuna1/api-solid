@@ -1,0 +1,15 @@
+#docker run --name scrapDb -e POSTGRESQL_USERNAME=scrap
+#-e POSTGRESQL_PASSWORD=scrap -e POSTGRESQL_DATABASE=scrap
+#-p 5432:5432 bitnami/postgresql
+
+version: "3"
+
+services:
+  api-solid-pg:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    enviroments:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=apisolid
